@@ -9,8 +9,6 @@ class MyPageradapter(fa: FragmentActivity) : FragmentStateAdapter(fa) {
 
     override fun getItemCount(): Int = NUM_PAGES
 
-
-
     override fun createFragment(position: Int): Fragment {
         return when (position) {
             0 -> MainFragment()

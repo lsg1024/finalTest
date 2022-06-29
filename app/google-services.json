@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "921309970946",
+    "project_id": "kakaotest-89934",
+    "storage_bucket": "kakaotest-89934.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:921309970946:android:27282a11467a22c3b65d1b",
+        "android_client_info": {
+          "package_name": "com.example.finaltest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "921309970946-51verk8ub5m4okne4mqe3m24m67fjqo3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPYPy3TR1nR-It3t9Mkr_QJn0REyBfJE8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "921309970946-51verk8ub5m4okne4mqe3m24m67fjqo3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
