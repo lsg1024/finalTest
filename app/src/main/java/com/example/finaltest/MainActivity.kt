@@ -1,23 +1,24 @@
 package com.example.finaltest
 
-import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.widget.ViewPager2
+import com.example.finaltest.fragmentFile.MyPageradapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
 
 class MainActivity : AppCompatActivity() {
 
-    val db = Firebase.firestore
+    val database = Firebase.database
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
 
         val viewPager2 : ViewPager2 = findViewById(R.id.viewpager2)
         val tabLayout : TabLayout = findViewById(R.id.tabLayout)
