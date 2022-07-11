@@ -9,7 +9,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.finaltest.DTO.ResultData
@@ -18,7 +17,6 @@ import com.example.finaltest.Interface.AuthRetrofitInterface
 import com.example.finaltest.Interface.RetrofitClass
 import com.example.finaltest.R
 import com.example.finaltest.GuestBook.SearchPackage.SearchActivity
-import org.w3c.dom.Text
 import retrofit2.*
 
 class GuestBookFragment : Fragment(){
@@ -33,8 +31,6 @@ class GuestBookFragment : Fragment(){
         val lankRecyclerView : RecyclerView = view.findViewById(R.id.rank_recyclerView)
         val service = RetrofitClass.retrofit.create(AuthRetrofitInterface::class.java)
         val result = service.GetlLankplace()
-        val Rank_Text : TextView = view.findViewById(R.id.lankText)
-
 
         result.enqueue(object : Callback<ResultData>{
             override fun onResponse(call: Call<ResultData>, response: Response<ResultData>) {
@@ -55,11 +51,13 @@ class GuestBookFragment : Fragment(){
                     lankRecyclerView.layoutManager = LinearLayoutManager(view.context, LinearLayoutManager.VERTICAL, false)
                     lankRecyclerView.adapter = LankAdapter(DataList)
 
-                    Rank_Text.setOnClickListener {
-                        val intent = Intent(context, ImageClick_Actitivty::class.java)
-                        // 여기있는 프래그먼트에서 텍스트를 클릭했을 때 gp_key 값을 보낸다 하트 수는 정렬해서 보내기 위한 값이다
-                        startActivity(intent)
-                    }
+//                     데이값을 넣어주고 클릭 버튼을 만들어주려했는데 오류가난다
+//                    val RankText : TextView = view!!.findViewById(R.id.lankText)
+//                    RankText.setOnClickListener {
+//                        val intent = Intent(context, ImageClick_Actitivty::class.java)
+//                        // 여기있는 프래그먼트에서 텍스트를 클릭했을 때 gp_key 값을 보낸다 하트 수는 정렬해서 보내기 위한 값이다
+//                        startActivity(intent)
+//                    }
 
 
                 } else{
