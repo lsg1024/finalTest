@@ -11,17 +11,20 @@
         <entry key="app/src/main/res/drawable/test4.xml" value="0.2515" />
         <entry key="app/src/main/res/layout/activity_bottom.xml" value="0.3523550724637681" />
         <entry key="app/src/main/res/layout/activity_click_event.xml" value="0.3523550724637681" />
+        <entry key="app/src/main/res/layout/activity_image_click_actitivty.xml" value="0.3401547241210937" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/activity_recyclerview.xml" value="0.3523550724637681" />
         <entry key="app/src/main/res/layout/activity_search.xml" value="0.44150543212890625" />
         <entry key="app/src/main/res/layout/activity_search2.xml" value="0.2194564819335938" />
         <entry key="app/src/main/res/layout/content_search.xml" value="0.17799835205078127" />
-        <entry key="app/src/main/res/layout/fragment_guest_book.xml" value="0.461688476397093" />
+        <entry key="app/src/main/res/layout/fragment_click_image.xml" value="0.11230085502400346" />
+        <entry key="app/src/main/res/layout/fragment_guest_book.xml" value="0.3855421686746988" />
         <entry key="app/src/main/res/layout/fragment_main.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/fragment_my_page.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/fragment_trap.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/fragment_with.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/guest_book_best.xml" value="0.3875" />
+        <entry key="app/src/main/res/layout/lank_item_recycler.xml" value="0.1537037037037037" />
         <entry key="app/src/main/res/layout/search_item_recycler.xml" value="0.3523550724637681" />
       </map>
     </option>
@@ -35,7 +38,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.16307678222656252" />
+        <option name="scale" value="0.44150543212890625" />
       </ProjectState>
     </option>
   </component>

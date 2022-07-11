@@ -3,7 +3,7 @@ package com.example.finaltest.fragmentFile
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.finaltest.fragmentFile.*
+import com.example.finaltest.GuestBook.GuestBookFragment
 
 class MyPageradapter(fa: FragmentActivity) : FragmentStateAdapter(fa) {
     private val NUM_PAGES = 5
