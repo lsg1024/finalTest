@@ -10,6 +10,12 @@ import com.example.finaltest.R
 
 class SearchActivity : AppCompatActivity() {
 
+    // 검색값을 저장해서 값을 전송 -> input 값을 저장해 전송? + 검색후 텍스트 저장할 변수도 생성
+    // 값을 받아온다 쪽에 서버에서 받은 대표값을 넣어준다
+    // 리사이클러뷰쪽에 사진들을 출력한다 출력할때에는 서버에서 받아온 값을 리스트에 분리 최대 5개
+    // 분리된 리스트 값을 for 반복문으로 한개씩 인덱스 처리해 준다 -> 추후 인덱스 처리를 랜덤 ex) 로또 같은 번호 출력 알고리즘
+    // 처리된 인덱스 번호들을 각각의 틀에 넣어 출력
+
     // 받아온 사진 데이터를 저장하는 곳 실행될때 동작해야함
     val DataList = arrayListOf(
         Data(R.drawable.dog),
@@ -33,6 +39,7 @@ class SearchActivity : AppCompatActivity() {
         Data(R.drawable.dog),
 
         )
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

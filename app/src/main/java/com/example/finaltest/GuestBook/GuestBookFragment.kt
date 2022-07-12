@@ -29,6 +29,7 @@ class GuestBookFragment : Fragment(){
         val view = inflater.inflate(R.layout.fragment_guest_book, container, false)
 
         val lankRecyclerView : RecyclerView = view.findViewById(R.id.rank_recyclerView)
+        val pedRecyclerView : RecyclerView = view.findViewById(R.id.ped_recyclerview)
         val service = RetrofitClass.retrofit.create(AuthRetrofitInterface::class.java)
         val result = service.GetlLankplace()
 
@@ -81,7 +82,7 @@ class GuestBookFragment : Fragment(){
     companion object {
 
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance() =
             GuestBookFragment().apply {
                 arguments = Bundle().apply {
 
