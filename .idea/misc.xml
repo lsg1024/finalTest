@@ -7,20 +7,24 @@
         <entry key="app/src/main/res/drawable-v24/test3.xml" value="0.2055" />
         <entry key="app/src/main/res/drawable/alam2.xml" value="0.172" />
         <entry key="app/src/main/res/drawable/corner_rectangle.xml" value="0.172" />
+        <entry key="app/src/main/res/drawable/create_guestplace.xml" value="0.1875" />
         <entry key="app/src/main/res/drawable/test.xml" value="0.172" />
         <entry key="app/src/main/res/drawable/test4.xml" value="0.2515" />
         <entry key="app/src/main/res/layout/activity_bottom.xml" value="0.3523550724637681" />
         <entry key="app/src/main/res/layout/activity_click_event.xml" value="0.3523550724637681" />
-        <entry key="app/src/main/res/layout/activity_image_click_actitivty.xml" value="0.3401547241210937" />
+        <entry key="app/src/main/res/layout/activity_create_place.xml" value="0.29438405797101447" />
+        <entry key="app/src/main/res/layout/activity_image_click_actitivty.xml" value="0.24864130434782608" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/activity_recyclerview.xml" value="0.3523550724637681" />
         <entry key="app/src/main/res/layout/activity_search.xml" value="0.44150543212890625" />
         <entry key="app/src/main/res/layout/activity_search2.xml" value="0.2194564819335938" />
         <entry key="app/src/main/res/layout/content_search.xml" value="0.17799835205078127" />
+        <entry key="app/src/main/res/layout/create_guestplace.xml" value="0.21920289855072464" />
         <entry key="app/src/main/res/layout/dialog_background.xml" value="0.19579533941236069" />
         <entry key="app/src/main/res/layout/dialog_profile.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_click_image.xml" value="0.11230085502400346" />
-        <entry key="app/src/main/res/layout/fragment_guest_book.xml" value="0.3855421686746988" />
+        <entry key="app/src/main/res/layout/fragment_create_place_.xml" value="0.29438405797101447" />
+        <entry key="app/src/main/res/layout/fragment_guest_book.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_main.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/fragment_my_page.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.3885416666666667" />
@@ -28,6 +32,7 @@
         <entry key="app/src/main/res/layout/fragment_with.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/guest_book_best.xml" value="0.3875" />
         <entry key="app/src/main/res/layout/lank_item_recycler.xml" value="0.3689502857349537" />
+        <entry key="app/src/main/res/layout/ped_item_view.xml" value="0.19579533941236069" />
         <entry key="app/src/main/res/layout/search_item_recycler.xml" value="0.3523550724637681" />
       </map>
     </option>

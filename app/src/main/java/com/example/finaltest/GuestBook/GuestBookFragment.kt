@@ -9,14 +9,19 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
+import androidx.fragment.app.FragmentManager
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.finaltest.DTO.ResultData
 import com.example.finaltest.GuestBook.SearchPackage.ImageClick_Actitivty
+import com.example.finaltest.GuestBook.SearchPackage.ImageData
+import com.example.finaltest.GuestBook.SearchPackage.PedAdapter
 import com.example.finaltest.Interface.AuthRetrofitInterface
 import com.example.finaltest.Interface.RetrofitClass
 import com.example.finaltest.R
 import com.example.finaltest.GuestBook.SearchPackage.SearchActivity
+import com.google.android.material.snackbar.Snackbar
 import retrofit2.*
 
 class GuestBookFragment : Fragment(){
@@ -71,11 +76,41 @@ class GuestBookFragment : Fragment(){
             }
         })
 
+        var Datalist = arrayListOf(
+            ImageData(R.drawable.dog),
+            ImageData(R.drawable.dog),
+            ImageData(R.drawable.dog),
+            ImageData(R.drawable.dog),
+            ImageData(R.drawable.dog),
+            ImageData(R.drawable.dog),
+            ImageData(R.drawable.dog),
+            ImageData(R.drawable.dog),
+            ImageData(R.drawable.dog),
+            ImageData(R.drawable.dog),
+            ImageData(R.drawable.dog),
+            ImageData(R.drawable.dog),
+            ImageData(R.drawable.dog),
+            ImageData(R.drawable.dog),
+        )
+
+
+
+        pedRecyclerView.layoutManager = GridLayoutManager(context, 2)
+        pedRecyclerView.adapter = PedAdapter(Datalist)
+
         val search : ImageButton = view.findViewById(R.id.search_button)
         search.setOnClickListener {
             val intent = Intent(context, SearchActivity::class.java)
             startActivity(intent)
         }
+
+        val fab : View = view.findViewById(R.id.feb_button)
+        fab.setOnClickListener {
+            val intent = Intent(context, Create_place::class.java)
+            startActivity(intent)
+
+        }
+
         return view
     }
 

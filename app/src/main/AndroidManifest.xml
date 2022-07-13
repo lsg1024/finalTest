@@ -4,6 +4,8 @@
     package="com.example.finaltest">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
 
     <application
         android:allowBackup="true"
@@ -17,10 +19,13 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name="com.example.finaltest.GuestBook.SearchPackage.ImageClick_Actitivty"
+            android:name=".GuestBook.Create_place"
             android:exported="false" />
         <activity
-            android:name="com.example.finaltest.GuestBook.SearchPackage.SearchActivity"
+            android:name=".GuestBook.SearchPackage.ImageClick_Actitivty"
+            android:exported="false" />
+        <activity
+            android:name=".GuestBook.SearchPackage.SearchActivity"
             android:exported="false"
             android:label="@string/title_activity_search"
             android:theme="@style/Theme.FinalTest.NoActionBar" />

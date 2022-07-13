@@ -27,11 +27,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleText" />
 
-    <TextView
+    <ImageView
         android:id="@+id/add_Image"
-        android:layout_width="210dp"
+        android:layout_width="0dp"
         android:layout_height="100dp"
-        android:text="+"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="@+id/dialog_comment"
         app:layout_constraintStart_toStartOf="parent"
