@@ -26,7 +26,10 @@ class MainActivity : AppCompatActivity() {
 
         viewPager2.apply {
             adapter = MyPageradapter(context as FragmentActivity)
+            // 사용자 스와이프 동작에 의해 화면 전환이 되지 않는다
+            isUserInputEnabled = false
         }
+
 
         TabLayoutMediator(tabLayout, viewPager2) {tab, position ->
             when (position){

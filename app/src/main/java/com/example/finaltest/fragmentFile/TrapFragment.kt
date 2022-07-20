@@ -1,60 +1,175 @@
 package com.example.finaltest.fragmentFile
 
+import android.Manifest
+import android.content.Context
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.location.Location
+import android.location.LocationManager
+import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.RelativeLayout
+import android.widget.Toast
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import androidx.fragment.app.FragmentManager
+import com.example.finaltest.MainActivity
 import com.example.finaltest.R
+import net.daum.android.map.MapViewController
+import net.daum.mf.map.api.MapView
+import net.daum.mf.map.api.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+val PERMISSIONS_REQUEST_CODE = 100
+var REQUIRED_PERMISSIONS = arrayOf( Manifest.permission.ACCESS_FINE_LOCATION)
 
-/**
- * A simple [Fragment] subclass.
- * Use the [TrapFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class TrapFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    lateinit var mainActivity: MainActivity
+    lateinit var mapView : MapView
+    lateinit var  mapViewContainer: ViewGroup
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_trap, container, false)
+
+        var view = inflater.inflate(R.layout.fragment_trap, container, false)
+
+//        val mapView : MapView = view.findViewById(R.id.map_view)
+//        mainActivity = context as MainActivity
+//
+//        mapView = MapView(activity)
+//        mapViewContainer = view.findViewById(R.id.map_view) as ViewGroup
+//        mapViewContainer.addView(mapView)
+//
+//        val button: Button = view.findViewById(R.id.button4)
+//
+//        button.setOnClickListener {
+//            val permissionCheck = ContextCompat.checkSelfPermission(
+//                mainActivity,
+//                Manifest.permission.ACCESS_FINE_LOCATION
+//            )
+//            if (permissionCheck == PackageManager.PERMISSION_GRANTED) {
+//                val lm: LocationManager =
+//                    mainActivity.getSystemService(Context.LOCATION_SERVICE) as LocationManager
+//                try {
+//                    val userNowLocation: Location =
+//                        lm.getLastKnownLocation(LocationManager.NETWORK_PROVIDER)!!
+//                    val uLatitude = userNowLocation.latitude
+//                    val uLongitude = userNowLocation.longitude
+//                    val uNowPosition =
+//                        MapPoint.mapPointWithGeoCoord(uLatitude, uLongitude)
+//
+//                    val maker = MapPOIItem()
+//                    maker.itemName = "현재 위치"
+//                    maker.mapPoint = uNowPosition
+//                    maker.markerType = MapPOIItem.MarkerType.BluePin
+//                    maker.selectedMarkerType = MapPOIItem.MarkerType.RedPin
+//                    mapView.addPOIItem(maker)
+//
+//                    mapView.setMapCenterPoint(uNowPosition, true)
+//                } catch (e: NullPointerException) {
+//                    Log.e("LOCATION_ERROR", e.toString())
+//                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+//                        ActivityCompat.finishAffinity(mainActivity)
+//                    } else {
+//                        ActivityCompat.finishAffinity(mainActivity)
+//                    }
+//
+//
+//                    val intent = Intent(mainActivity, TrapFragment::class.java)
+//                    startActivity(intent)
+//                    System.exit(0)
+//                }
+//            } else {
+//                Toast.makeText(mainActivity, "위치 권한이 없습니다.", Toast.LENGTH_SHORT).show()
+//                ActivityCompat.requestPermissions(
+//                    mainActivity,
+//                    REQUIRED_PERMISSIONS,
+//                    PERMISSIONS_REQUEST_CODE
+//                )
+//            }
+//        }
+
+        return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment TrapFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            TrapFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    override fun onStart() {
+        super.onStart()
+        mainActivity = context as MainActivity
+        mapViewContainer = mainActivity.findViewById(R.id.map_view) as ViewGroup
+
+
+
+        val button: Button = mainActivity.findViewById(R.id.button4)
+
+        button.setOnClickListener {
+            val permissionCheck = ContextCompat.checkSelfPermission(
+                mainActivity,
+                Manifest.permission.ACCESS_FINE_LOCATION
+            )
+            if (permissionCheck == PackageManager.PERMISSION_GRANTED) {
+                val lm: LocationManager =
+                    mainActivity.getSystemService(Context.LOCATION_SERVICE) as LocationManager
+                try {
+                    val userNowLocation: Location =
+                        lm.getLastKnownLocation(LocationManager.NETWORK_PROVIDER)!!
+                    val uLatitude = userNowLocation.latitude
+                    val uLongitude = userNowLocation.longitude
+                    val uNowPosition =
+                        MapPoint.mapPointWithGeoCoord(uLatitude, uLongitude)
+
+                    val maker = MapPOIItem()
+                    maker.itemName = "현재 위치"
+                    maker.mapPoint = uNowPosition
+                    maker.markerType = MapPOIItem.MarkerType.BluePin
+                    maker.selectedMarkerType = MapPOIItem.MarkerType.RedPin
+                    mapView.addPOIItem(maker)
+
+                    mapView.setMapCenterPoint(uNowPosition, true)
+                } catch (e: NullPointerException) {
+                    Log.e("LOCATION_ERROR", e.toString())
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                        ActivityCompat.finishAffinity(mainActivity)
+                    } else {
+                        ActivityCompat.finishAffinity(mainActivity)
+                    }
+
+
+                    val intent = Intent(mainActivity, TrapFragment::class.java)
+                    startActivity(intent)
+                    System.exit(0)
                 }
+            } else {
+                Toast.makeText(mainActivity, "위치 권한이 없습니다.", Toast.LENGTH_SHORT).show()
+                ActivityCompat.requestPermissions(
+                    mainActivity,
+                    REQUIRED_PERMISSIONS,
+                    PERMISSIONS_REQUEST_CODE
+                )
             }
+        }
+    }
+
+
+    override fun onResume() {
+        super.onResume()
+        // 화면으로 복귀했을 경우 다시 뷰를 활성화 시킨다
+        mapView = MapView(activity)
+        mapViewContainer.addView(mapView)
+    }
+
+
+    override fun onPause() {
+        super.onPause()
+        // 다른 화면으로 넘어갔을 경우 종료 시키지 않고 멈춤 상태를 만든다
+        mapViewContainer.removeView(mapView)
     }
 }
